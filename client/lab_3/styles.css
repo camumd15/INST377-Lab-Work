@@ -49,11 +49,9 @@
     height: 300px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
-  .header {
-    /* ... */
-    align-items: center;  /* Add this */
-  }
+ 
   .photo-grid-container {
     display: flex;
     justify-content: center;
@@ -75,7 +73,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: row;  /* <--- Really freaking cool! */
+    flex-direction: row-reverse;  /* <--- Really freaking cool! */
     align-items: center;
   }
   .first-item {

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        
+            <title>Learn JavaScript by creating a Tetris game</title>
+        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        
+            <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./Learn JavaScript by creating a Tetris game_files/css2">
+        
+
+        
+        
+    <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./Learn JavaScript by creating a Tetris game_files/prism.min.css">
+<noscript><link rel="stylesheet" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.css"></noscript>
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./Learn JavaScript by creating a Tetris game_files/prism-unescaped-markup.css">
+<noscript><link rel="stylesheet" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-unescaped-markup.css"></noscript>
+
+<script src="./Learn JavaScript by creating a Tetris game_files/f(9).txt"></script><script src="./Learn JavaScript by creating a Tetris game_files/f(10).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./Learn JavaScript by creating a Tetris game_files/analytics.js"></script><script async="" src="./Learn JavaScript by creating a Tetris game_files/gtm.js"></script><script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-unescaped-markup.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-markup-templating.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-bash.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-c.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-clojure.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-cpp.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-csharp.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-css.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-docker.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-elixir.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-erlang.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-git.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-go.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-graphql.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-haskell.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-java.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-javascript.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-json.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-jsx.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-kotlin.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-lua.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-markup.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-php.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-python.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-r.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-ruby.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-rust.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-scala.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-sql.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-swift.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-typescript.min.js"></script>
+<script defer="" type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/prism-yaml.min.js"></script>
+
+
+
+        
+        <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="./Learn JavaScript by creating a Tetris game_files/global-e42e31c0f5.css">
+        <link rel="stylesheet" type="text/css" href="./Learn JavaScript by creating a Tetris game_files/screen-8ade484d48.css">
+        <link rel="stylesheet" type="text/css" href="./Learn JavaScript by creating a Tetris game_files/search-bar-124f5f949c.css">
+
+        
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/algoliasearch.min.js"></script>
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/autocomplete.min.js"></script>
+
+        
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/dayjs.min.js"></script>
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/localizedFormat.min.js"></script>
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/relativeTime.min.js"></script>
+
+        
+        
+            <script defer="" src="./Learn JavaScript by creating a Tetris game_files/en.min.js"></script>
+        
+
+        
+        <script>let client,index;document.addEventListener("DOMContentLoaded",(()=>{client=algoliasearch("QMJYL5WYTI","89770b24481654192d7a5c402c6ad9a0"),index=client.initIndex("news")})),document.addEventListener("DOMContentLoaded",(()=>{const e=window.screen.width,t=window.screen.height,n=e>=767&&t>=768?8:5,o=document.getElementById("search-form"),s=document.getElementById("search-input"),a=document.getElementById("dropdown-container");let i,d,l;s.addEventListener("input",(e=>{i=e.target.value})),o.addEventListener("submit",(e=>{e.preventDefault(),function(){if(d=document.getElementsByClassName("aa-cursor")[0],d&&i){const e=d.querySelector("a").href;window.location.assign(e)}else!d&&i&&l&&window.location.assign(`https://www.freecodecamp.org/news/search?query=${i}`)}()}));const c=autocomplete("#search-input",{hint:!1,keyboardShortcuts:["s",191],openOnFocus:!0,appendTo:a,debug:!0},[{source:autocomplete.sources.hits(index,{hitsPerPage:n}),debounce:250,templates:{suggestion:e=>(l=!0,`\n            <a href="${e.url}">\n              <div class="algolia-result">\n                <span>${e._highlightResult.title.value}</span>\n              </div>\n            </a>\n          `),empty:()=>(l=!1,'\n            <div class="aa-suggestion footer-suggestion no-hits-footer">\n              <div class="algolia-result">\n                <span>\n                  No tutorials found\n                </span>\n              </div>\n            </div>\n          '),footer:e=>{if(!e.isEmpty)return`\n              <div class="aa-suggestion footer-suggestion">\n                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${i}">\n                  <div class="algolia-result algolia-footer">\n                    See all results for ${i}\n                  </div>\n                </a>\n              </div>\n            `}}}]).on("autocomplete:selected",((e,t,n,o)=>{d=t?t.url:`https://www.freecodecamp.org/news/search?query=${i}`,"click"!==o.selectionMethod&&"tabKey"!==o.selectionMethod&&l&&window.location.assign(d)}));document.addEventListener("click",(e=>{e.target!==s&&c.autocomplete.close()}))})),document.addEventListener("DOMContentLoaded",(()=>{dayjs.extend(dayjs_plugin_localizedFormat),dayjs.extend(dayjs_plugin_relativeTime),dayjs.locale("en")}));</script>
+
+        
+        
+    
+        <script data-ad-client="ca-pub-9482786369113753" src="./Learn JavaScript by creating a Tetris game_files/f(11).txt" crossorigin="anonymous" async="" data-checked-head="true"></script>
+        <script defer="" src="./Learn JavaScript by creating a Tetris game_files/toggle-ad-layout-e19630d847.js"></script>
+    
+
+
+        
+        
+    <script defer="" src="./Learn JavaScript by creating a Tetris game_files/fitvids-7eb2ff3cd7.js"></script>
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t=document.querySelector(".post-full-content");t&&fitVids(t)}));</script>
+
+
+        
+        
+
+        <link rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" type="image/png">
+        
+        
+            <link rel="canonical" href="https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/">
+        
+        <meta name="referrer" content="no-referrer-when-downgrade">
+
+        
+
+        
+    <link rel="amphtml" href="https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/amp/">
+    <meta name="description" content="Building real-world projects is one of the best ways to learn to code. And if you are going to build a project, you might as well make it one of the most popular and most fun games of all time: Tetris. Some reading music. ? This video course from Ania">
+
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Learn JavaScript by creating a Tetris game">
+    
+        <meta property="og:description" content="Building real-world projects is one of the best ways to learn to code. And if you are going to build a project, you might as well make it one of the most popular and most fun games of all time: Tetris. Some reading music. ? This video course from Ania">
+    
+    <meta property="og:url" content="https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/">
+    <meta property="og:image" content="https://www.freecodecamp.org/news/content/images/2020/09/codetetris.png">
+    <meta property="article:published_time" content="2020-05-18T19:36:21.000Z">
+    <meta property="article:modified_time" content="2020-09-25T12:49:07.000Z">
+    
+        <meta property="article:tag" content="JavaScript">
+    
+        <meta property="article:tag" content="YouTube">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn JavaScript by creating a Tetris game">
+    
+        <meta name="twitter:description" content="Building real-world projects is one of the best ways to learn to code. And if you are going to build a project, you might as well make it one of the most popular and most fun games of all time: Tetris. Some reading music. ? This video course from Ania">
+    
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/">
+    <meta name="twitter:image" content="https://www.freecodecamp.org/news/content/images/2020/09/codetetris.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Beau Carnes">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, YouTube">
+    <meta name="twitter:site" content="@freecodecamp">
+    
+        <meta name="twitter:creator" content="@beaucarnes">
+    
+
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+
+
+        
+    <script type="application/ld+json">{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+		"@type": "Organization",
+		"name": "freeCodeCamp.org",
+		"url": "https://www.freecodecamp.org/news/",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg",
+			"width": 2100,
+			"height": 240
+		}
+	},
+	"image": {
+		"@type": "ImageObject",
+		"url": "https://www.freecodecamp.org/news/content/images/2020/09/codetetris.png",
+		"width": 1280,
+		"height": 720
+	},
+	"url": "https://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.freecodecamp.org/news/"
+	},
+	"datePublished": "2020-05-18T19:36:21.000Z",
+	"dateModified": "2020-09-25T12:49:07.000Z",
+	"keywords": "JavaScript, YouTube",
+	"description": "Building real-world projects is one of the best ways to learn to code. And if\nyou are going to build a project, you might as well make it one of the most\npopular and most fun games of all time: Tetris.\n\nSome reading music. ?\nThis video course from Ania Kubow will help you learn the basics of JavaScript\nby coding a Tetris game from scratch. This is a great course for people who have\nnever touched code before or people who want to review the fundamentals.\n\nThe course doesn&#x27;t cover every little det",
+	"headline": "Learn JavaScript by creating a Tetris game",
+	"author": {
+		"@type": "Person",
+		"name": "Beau Carnes",
+		"url": "https://www.freecodecamp.org/news/author/beau/",
+		"sameAs": [
+			"http://carnes.cc",
+			"https://twitter.com/beaucarnes"
+		],
+		"image": {
+			"@type": "ImageObject",
+			"url": "https://www.freecodecamp.org/news/content/images/2021/05/beau-carnes-gravatar.jpeg",
+			"width": 250,
+			"height": 250
+		}
+	}
+}</script>
+
+
+        <meta name="generator" content="Eleventy">
+        <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/news/rss/">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+<!-- Web Monetization (https://webmonetization.org/) -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- end Web Monetization -->
+
+
+<!-- GAP -->
+
+<!-- end of GAP -->
+
+<!-- Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+<script>
+  // Set up dataLayer with data if provided
+  window.dataLayer = window.dataLayer || [{ gaPropertyId: 'UA-55446531-20' }];
+
+  // Initialized GTM via gtag
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-55446531-20');
+
+  // Configure and initialize GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer', 'GTM-5D6RKKP');
+</script>
+<!-- End Google Tag Manager -->
+
+
+<meta name="google-site-verification" content="b4tITLzEeeZGEpvD4mGNf3khKM4fvqejQaz9SYBQP8E">
+
+        
+    <style id="fit-vids-style">.fluid-width-video-container{flex-grow: 1;width:100%;}.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><link rel="preload" href="./Learn JavaScript by creating a Tetris game_files/f(12).txt" as="script"><script type="text/javascript" src="./Learn JavaScript by creating a Tetris game_files/f(12).txt"></script></head>
+    
+    
+        <body class="home-template">
+    
+        <div class="site-wrapper" style="height: auto !important; min-height: 0px !important;">
+            <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        <form id="search-form" data-test-label="search-bar">
+  <div role="search" class="searchbox__wrapper">
+    <label class="fcc_sr_only" for="search-input">
+      Search
+    </label>
+    <input type="search" placeholder="Search 8,000+ tutorials" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+    <button type="submit" class="ais-SearchBox-submit">
+      <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+    <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+</svg>
+
+      <span class="fcc_sr_only">Submit your search query</span>
+    </button>
+    <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="display: block; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span></div>
+  </div>
+</form>
+
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news"><img src="./Learn JavaScript by creating a Tetris game_files/fcc_primary.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" href="https://forum.freecodecamp.org/" target="_blank" data-test-label="forum-button">Forum</a>
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" href="https://www.freecodecamp.org/donate/" target="_blank" data-test-label="donate-button">Donate</a>
+        </div>
+    </div>
+</nav>
+
+
+            
+            <a class="banner" id="banner" data-test-label="banner" rel="noopener noreferrer" href="https://www.freecodecamp.org/" target="_blank">
+    <p>
+        Learn to code — <span>free 3,000-hour curriculum</span>
+    </p>
+</a>
+
+
+            <div id="error-message"></div>
+
+            
+    <main id="site-main" class="post-template site-main outer" style="height: auto !important;">
+        <div class="inner ad-layout" style="height: auto !important;">
+            <article class="post-full post " style="height: auto !important;">
+                <header class="post-full-header">
+                    <section class="post-full-meta">
+                        <time class="post-full-meta-date" datetime="Mon May 18 2020 19:36:21 GMT+0000 (Coordinated Universal Time)">
+                            May 18, 2020
+                        </time>
+                        
+                            <span class="date-divider">/</span>
+                            <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                                #JavaScript
+                            </a>
+                        
+                    </section>
+                    <h1 class="post-full-title">Learn JavaScript by creating a Tetris game</h1>
+                </header>
+                <div class="post-full-author-header">
+                    
+                        
+                            
+    
+    
+
+    <section class="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/news/content/images/size/w60/2021/05/beau-carnes-gravatar.jpeg 60w" sizes="60px" src="./Learn JavaScript by creating a Tetris game_files/beau-carnes-gravatar.jpeg" class="author-profile-image" alt="Beau Carnes" width="250" height="250" onerror="this.style.display=&#39;none&#39;">
+  
+        
+
+        <section class="author-card-content author-card-content-no-bio">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/beau/">
+                    
+                        Beau Carnes
+                    
+                </a>
+            </span>
+            
+        </section>
+    </section>
+
+                        
+                    
+                </div>
+                
+                    <figure class="post-full-image">
+                        
+    <picture>
+      <source media="(max-width: 700px)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w">
+      <source media="(min-width: 701px)" sizes="(max-width: 800px) 400px, (max-width: 1170px) 700px, 1400px" srcset="https://www.freecodecamp.org/news/content/images/size/w300/2020/09/codetetris.png 300w,https://www.freecodecamp.org/news/content/images/size/w600/2020/09/codetetris.png 600w,https://www.freecodecamp.org/news/content/images/size/w1000/2020/09/codetetris.png 1000w,https://www.freecodecamp.org/news/content/images/size/w2000/2020/09/codetetris.png 2000w">
+      <img onerror="this.style.display=&#39;none&#39;" src="./Learn JavaScript by creating a Tetris game_files/codetetris.png" alt="Learn JavaScript by creating a Tetris game" ,="" width="1280" height="720">
+    </picture>
+  
+                    </figure>
+                
+                <section class="post-full-content" style="height: auto !important; min-height: 0px !important;">
+                    <div class="post-and-sidebar" style="height: auto !important;">
+                        <section class="post-content ">
+                            
+<p>Building real-world projects is one of the best ways to learn to code. And if you are going to build a project, you might as well make it one of the most popular and most fun games of all time: Tetris.</p><!--kg-card-begin: html--><iframe src="./Learn JavaScript by creating a Tetris game_files/File_Tetris_theme.html" width="300" height="20" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" title="Embedded content" loading="lazy"></iframe><em>Some reading music. ?</em><br><!--kg-card-end: html--><p>This video course from Ania Kubow will help you learn the basics of JavaScript by coding a Tetris game from scratch. This is a great course for people who have never touched code before or people who want to review the fundamentals.</p><p>The course doesn't cover every little detail of JavaScript – but that's the point. It helps you jump right in to building an actual game that you will be able to play.</p><p>You will first learn how to set up a project from scratch using the Atom code editor and a command prompt tool. Then you will gain a fundamental understanding of JavaScript by building your very own version of Tetris. Along the way, you will also get a brief overview of how to use HTML and CSS.<br><br>Throughout the course, there are explainer sections that teach basic JavaScript concepts such as variables, functions, arrays, and more. These explainer sections take a break from the Tetris project to drill down on a specific concept. They include images and diagrams to help you understand the concepts better.</p><p>Also, at the end of some sections, there are multiple-choice questions to help you test your knowledge.</p><figure class="kg-card kg-image-card"><img src="./Learn JavaScript by creating a Tetris game_files/tetris.gif" class="kg-image" alt="tetris" width="480" height="360" loading="lazy"></figure><p>Here are some of the JavaScript methods you will learn in this course:</p><ul><li>addEventListener()</li><li>querySelector()</li><li>querySelectorAll()</li><li>keyCode()</li><li>Math.floor()</li><li>Math.random()</li><li>length</li><li>forEach()</li><li>splice()</li><li>clearInterval()</li><li>setInterval()</li><li>some()</li><li>innerHTML()</li><li>every()</li><li>add()</li><li>remove()</li><li>contains()</li></ul><p>Once you finish the course, you will have created your very own Tetris game that you can play. Just be careful where you play it because the Guinness World Record for "<a href="https://www.guinnessworldrecords.com/world-records/longest-prison-sentence-for-playing-a-video-game">Longest prison sentence for playing a video game</a>" involved a game of Tetris.</p><p>You can watch the course below or on <a href="https://www.youtube.com/watch?v=rAUn1Lom6dw">the freeCodeCamp.org YouTube channel</a> (1.5 hour watch).</p><figure class="kg-card kg-embed-card"><div class="fluid-width-video-container"><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="./Learn JavaScript by creating a Tetris game_files/rAUn1Lom6dw.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" title="Embedded content" loading="lazy" name="fitvid0"></iframe></div></div></figure>
+
+                        </section>
+                        
+                            <div class="sidebar" style="height: auto !important;">
+                                
+                                    <div class="ad-container" style="width: 300px; height: 600px;">
+    <ins class="adsbygoogle" style="display: block; height: 600px; width: 300px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_1_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_1_anchor" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block; overflow: hidden;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Learn JavaScript by creating a Tetris game_files/ads.html" data-google-container-id="a!2" data-google-query-id="CJLQt5Cfh_YCFYpCcgod78sL0A" data-load-complete="true"></iframe></ins></ins></ins>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        if (notAuthenticated) (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+</script>
+
+                                
+                                    <div class="ad-container" style="width: 300px; height: 600px;">
+    <ins class="adsbygoogle" style="display: block; height: 600px; width: 300px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_2_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_2_anchor" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block; overflow: hidden;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Learn JavaScript by creating a Tetris game_files/ads(1).html" data-google-container-id="a!3" data-google-query-id="CPrTt5Cfh_YCFReqyAodq1wN_A" data-load-complete="true"></iframe></ins></ins></ins>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        if (notAuthenticated) (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+</script>
+
+                                
+                                    <div class="ad-container">
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_3_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_3_anchor" style="border: none; height: 600px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:300px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Learn JavaScript by creating a Tetris game_files/ads(2).html" data-google-container-id="a!4" data-google-query-id="CLOOh5Gfh_YCFeaQyAodRoIJKA" data-load-complete="true"></iframe></ins></ins></ins>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        if (notAuthenticated) (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+</script>
+
+                                
+                            </div>
+                        
+                    </div>
+                    <hr>
+                    
+                        <div class="post-full-author-header">
+                            
+                                
+    
+    
+
+    <section class="author-card">
+        
+            
+    <img srcset="https://www.freecodecamp.org/news/content/images/size/w60/2021/05/beau-carnes-gravatar.jpeg 60w" sizes="60px" src="./Learn JavaScript by creating a Tetris game_files/beau-carnes-gravatar.jpeg" class="author-profile-image" alt="Beau Carnes" width="250" height="250" onerror="this.style.display=&#39;none&#39;" loading="lazy">
+  
+        
+
+        <section class="author-card-content ">
+            <span class="author-card-name">
+                <a href="https://www.freecodecamp.org/news/author/beau/">
+                    
+                        Beau Carnes
+                    
+                </a>
+            </span>
+            
+                
+                    <p>I'm a teacher and developer with freeCodeCamp.org. I run the freeCodeCamp.org YouTube channel.</p>
+                
+            
+        </section>
+    </section>
+
+                            
+                        </div>
+                        <hr>
+                    
+
+                    
+                    
+                        
+
+<p data-test-label="social-row" class="social-row">
+    If you read this far, tweet to the author to show them you care. <a id="tweet-btn" class="cta-button" onclick="window.open(
+    &#39;https://twitter.com/intent/tweet?text=Thank you @beaucarnes for writing this helpful article.%0A%0ALearn JavaScript by creating a Tetris game%0A%0Ahttps://www.freecodecamp.org/news/learn-javascript-by-creating-a-tetris-game/&#39;,
+    &#39;share-twitter&#39;,
+    &#39;width=550, height=235&#39;
+  ); return false;">Tweet a thanks</a>
+</p>
+
+
+    
+    <script>document.addEventListener("DOMContentLoaded",(()=>{const t="Learn JavaScript by creating a Tetris game".replace(/&#39;/g,"%27"),e=window.location,n=`window.open(\n    'https://twitter.com/intent/tweet?text=${`Thank you @beaucarnes for writing this helpful article.%0A%0A${t}%0A%0A${e}`}',\n    'share-twitter',\n    'width=550, height=235'\n  ); return false;`;document.getElementById("tweet-btn").setAttribute("onclick",n)}));</script>
+
+
+                        
+
+<div class="learn-cta-row" data-test-label="learn-cta-row">
+    <p>
+        Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. <a href="https://www.freecodecamp.org/learn/" class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Get started</a>
+    </p>
+</div>
+
+                    
+                </section>
+            </article>
+            
+                <div class="banner-ad bottom">
+                    <div class="ad-container">
+    <ins class="adsbygoogle" style="display: block; height: 273px; width: 1060px;" data-ad-client="ca-pub-9482786369113753" data-ad-slot="5720086888" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_4_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 273px; width: 1060px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_4_anchor" style="border: none; height: 273px; width: 1060px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block; overflow: hidden;"><iframe id="aswift_4" name="aswift_4" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 1060px; height: 273px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1060" height="273" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Learn JavaScript by creating a Tetris game_files/ads(3).html" data-google-container-id="a!5" data-google-query-id="CKm8pJKfh_YCFYrsyAod6LEL_w" data-load-complete="true"></iframe></ins></ins></ins>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        if (notAuthenticated) (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+</script>
+
+                </div>
+            
+        </div>
+    </main>
+
+
+            
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p data-test-label="tax-exempt-status">freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)</p>
+                <p data-test-label="mission-statement">Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.</p>
+                <p data-test-label="donation-initiatives">Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.</p>
+                <p class="footer-donation" data-test-label="donate-text">
+                    You can <a href="https://www.freecodecamp.org/donate/" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="trending-guides" data-test-label="trending-guides">
+                <div class="col-header">Trending Guides</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/news/html-font-style-how-to-change-text-color-and-size-with-an-html-tag/" rel="noopener noreferrer" target="_blank">HTML Font Style
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/python-enumerate-python-enum-for-loop-index-example/" rel="noopener noreferrer" target="_blank">Python Enumerate
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/pre-tag-in-html-example-code/" rel="noopener noreferrer" target="_blank">&lt;pre&gt; tag in HTML
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/git-delete-branch-how-to-remove-a-local-or-remote-branch/" rel="noopener noreferrer" target="_blank">Git Delete Branch
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/git-revert-commit-how-to-undo-the-last-commit/" rel="noopener noreferrer" target="_blank">Git Revert Commit
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/bold-font-in-html-font-weight-for-letters/" rel="noopener noreferrer" target="_blank">Bold Font in HTML
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/" rel="noopener noreferrer" target="_blank">HTML Button onclick
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/html-underline-text-how-to-use-the-u-tag-with-example-code/" rel="noopener noreferrer" target="_blank">HTML Underline Text
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/the-css-display-property-display-none-display-table-inline-block-and-more/" rel="noopener noreferrer" target="_blank">CSS Display Property
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/sql-left-join-example-join-statement-syntax/" rel="noopener noreferrer" target="_blank">SQL Left Join Syntax
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/news/html-font-css-font-family-example-serif-and-sans-serif-characters/" rel="noopener noreferrer" target="_blank">CSS Font
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/html-space-how-to-add-a-non-breaking-space-with-the-nbsp-character-entity/" rel="noopener noreferrer" target="_blank">HTML Space
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/html-form-input-type-and-submit-button-example/" rel="noopener noreferrer" target="_blank">HTML Forms
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/how-to-code-coding-for-beginners-and-how-to-learn-programming-for-free/" rel="noopener noreferrer" target="_blank">How to Code
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-php-the-php-programming-language-meaning-explained/" rel="noopener noreferrer" target="_blank">What is PHP?
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-html-definition-and-meaning/" rel="noopener noreferrer" target="_blank">What is HTML?
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/img-html-image-tag-tutorial/" rel="noopener noreferrer" target="_blank">HTML Image Tag
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/what-is-https-http-vs-https-meaning-and-how-it-works/" rel="noopener noreferrer" target="_blank">What is HTTPS?
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/sql-join-types-inner-join-vs-outer-join-example/" rel="noopener noreferrer" target="_blank">SQL Join Types
+                        </a>
+                        <a href="https://www.freecodecamp.org/news/coding-websites-where-you-can-learn-how-to-code-for-free/" rel="noopener noreferrer" target="_blank">Coding Websites
+                        </a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/news/case-statement-in-sql-example-query/" rel="noopener noreferrer" target="_blank">Case Statement in SQL
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/javascript-settimeout-js-timer-to-delay-n-seconds/" rel="noopener noreferrer" target="_blank">JavaScript setTimeout()
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/python-function-examples-how-to-declare-and-invoke-with-parameters-2/" rel="noopener noreferrer" target="_blank">Python Function Examples
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/external-css-stylesheets-how-to-link-css-to-html-and-import-into-head/" rel="noopener noreferrer" target="_blank">External CSS Stylesheets
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/html-and-css-inline-style-external-stylesheet-css-code-examples/" rel="noopener noreferrer" target="_blank">HTML and CSS Code Examples
+                            </a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/news/remove-a-directory-in-linux-how-to-delete-directories-and-contents-from-the-command-line/" rel="noopener noreferrer" target="_blank">Remove a Directory in Linux
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-insert-a-text-box-in-google-docs-add-textbox-tutorial/" rel="noopener noreferrer" target="_blank">Text Box in Google Docs
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/what-is-an-outlier-definition-and-how-to-find-outliers-in-statistics/" rel="noopener noreferrer" target="_blank">Outlier in Statistics
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-change-screen-brightness-on-windows-10/" rel="noopener noreferrer" target="_blank">Windows 10 Screen Brightness
+                            </a>
+                            <a href="https://www.freecodecamp.org/news/how-to-unblock-someone-on-instagram/" rel="noopener noreferrer" target="_blank">Unblock Someone on Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header" data-test-label="our-nonprofit">Our Nonprofit</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/news/about/" rel="noopener noreferrer" target="_blank" data-test-label="about">
+                    About
+                </a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank" data-test-label="alumni">
+                    Alumni Network
+                </a>
+                <a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank" data-test-label="open-source">
+                    Open Source
+                </a>
+                <a href="https://www.freecodecamp.org/news/shop/" rel="noopener noreferrer" target="_blank" data-test-label="shop">
+                    Shop
+                </a>
+                <a href="https://www.freecodecamp.org/news/support/" rel="noopener noreferrer" target="_blank" data-test-label="support">
+                    Support
+                </a>
+                <a href="https://www.freecodecamp.org/news/sponsors/" rel="noopener noreferrer" target="_blank" data-test-label="sponsors">
+                    Sponsors
+                </a>
+                <a href="https://www.freecodecamp.org/news/academic-honesty-policy/" rel="noopener noreferrer" target="_blank" data-test-label="honesty">
+                    Academic Honesty
+                </a>
+                <a href="https://www.freecodecamp.org/news/code-of-conduct/" rel="noopener noreferrer" target="_blank" data-test-label="coc">
+                    Code of Conduct
+                </a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/" rel="noopener noreferrer" target="_blank" data-test-label="privacy">
+                    Privacy Policy
+                </a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/" rel="noopener noreferrer" target="_blank" data-test-label="tos">
+                    Terms of Service
+                </a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/" rel="noopener noreferrer" target="_blank" data-test-label="copyright">
+                    Copyright Policy
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        </div>
+
+        
+        
+        
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+        
+    <script defer="" src="./Learn JavaScript by creating a Tetris game_files/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon="{&quot;rayId&quot;:&quot;6df0abd9fc6059a4&quot;,&quot;token&quot;:&quot;bdb993c6dde44e178aabd9555e75e4f4&quot;,&quot;version&quot;:&quot;2021.12.0&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><ins id="aswift_0_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_0_anchor" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Learn JavaScript by creating a Tetris game_files/ads(4).html" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins><iframe src="./Learn JavaScript by creating a Tetris game_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./Learn JavaScript by creating a Tetris game_files/zrt_lookup.html" style="display: none;"></iframe></html>

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+ol {
+  counter-reset: list;
+  padding-left: 1.4em;
+}
+
+ol > li {
+  list-style: none;
+  position: relative;
+}
+
+ol > li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+  position: absolute;
+  left: -1.4em;
+}
+
+.instructions ol {
+  margin-top: -10px;
+}
+
+.instructions {
+  padding: 60px;
+}
+
+.container {
+  cursor: pointer;
+  padding: 40px 60px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid #d4d4d4;
+  background-color: #141526;
+  color: #fff;
+  width: 970px;
+  height: 250px;
+}
+
+.call-to-action {
+  padding-right: 40px;
+}
+
+.cta-button {
+  position: relative;
+  display: inline-block;
+  border-radius: 10em;
+  background: linear-gradient(to right bottom, #6AF3F4, #776BFF, #B46CF3);
+  font-weight: 600;
+  vertical-align: middle;
+  color: #141526;
+  border: none;
+  font-size: 26px;
+  padding: 0.5em 1em;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  overflow: hidden;
+  filter: drop-shadow(0 3px 6px #00000016);
+}
+
+.cta-button:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes shiny-btn1 {
+0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+40% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+60% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}

@@ -13,6 +13,31 @@
         this form.</em></p>
     </header>
     <form action='https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json' method='get' class='speaker-form'>
+        <div class='form-row'>
+            <label for='full-name'> First Name</label>
+            <input id='full-name' name='full-name' type='text'/>
+        </div>
+        <div class='form-row-2'>
+            <label for='food-preference'> Food Preference</label>
+            <input id='food-preference' name='food preference' type='text'/>
+        </div>
+        <fieldset class='legacy-form-row'>
+            <legend>Veggie or Vegan?</legend>
+            <input id='talk-type-1'
+                   name='talk-type'
+                   type='radio'
+                   value='main-stage' />
+            <label for='talk-type-1' class='radio-label'>Veggie</label>
+            <input id='talk-type-2'
+                   name='talk-type'
+                   type='radio'
+                   value='workshop'
+                   checked />
+            <label for='talk-type-2' class='radio-label'>Vegan</label>
+          </fieldset>
+          <div class='form-row'>
+            <button>Submit</button>
+          </div>
     </form>
   </body>
 </html>

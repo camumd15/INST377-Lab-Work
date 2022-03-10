@@ -8,7 +8,7 @@
     font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
     background-color: rgba(2, 71, 56, 0.5);
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: flex row;
     justify-content: left;
     padding: 10px;
   }

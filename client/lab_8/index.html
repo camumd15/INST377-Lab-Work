@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8' />
+    <title>Speaker Submission</title>
+    <nav>
+        <h1>Cameron Martin Lab 8: JSON to Map Markers</h1>
+    </nav>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css%22%3E">
+    <link rel='stylesheet' href='styles.css' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+
+<body>
+    <!-- <header class='speaker-form-header'>
+      <h1>Speaker Submission</h1>
+      <p><em>Want to speak at our fake conference? Fill out
+        this form.</em></p>
+    </header> -->
+    <div class='columns'>
+        <div class='column is-narrow'>
+            <div class='box' id = 'resize'>
+                <form class='main_form'>
+                    <div class='form-row'>
+                        <label for='restaurant name'> Restaurant Name</label>
+                        <input id='restaurant-name' name='restaurant-name' type='text' />
+                    </div>
+                    <div class='form-row-2'>
+                        <label for='food-preference'> Zip Code</label>
+                        <input id='food-preference' name='food-preference' type='text' />
+                    </div>
+                    <fieldset class='legacy-form-row'>
+                        <legend>Veggie or Vegan? (optional)</legend>
+                        <input id='talk-type-1' name='talk-type' type='radio' value='main-stage' />
+                        <label for='talk-type-1' class='radio-label'>Veggie</label>
+                        <input id='talk-type-2' name='talk-type' type='radio' value='workshop' checked />
+                        <label for='talk-type-2' class='radio-label'>Vegan</label>
+                    </fieldset>
+                    <div class='form-row'>
+                        <button>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class='column full'>
+            <div class='box'>
+            <div class='restaurants'>
+                This is going to be something is 2 weeks!
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="mymap"></div>
+    <script src="./script.js"></script>
+</body>
+
+
+
+</html>
